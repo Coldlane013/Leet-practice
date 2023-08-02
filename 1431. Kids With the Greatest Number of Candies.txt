@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+    vector<bool> result;
+    int maxj, candies_count;
+    for(int i  = 0; i < candies.size(); i++){
+        maxj = candies[i] + extraCandies;
+        candies_count = maxj; 
+        for(int i = 0; i<candies.size();i++){
+            candies_count = max(candies[i],candies_count);
+        }
+        if(candies_count==maxj){
+            result.push_back(true);
+        }
+        else{
+            result.push_back(false);
+        }
+    }
+    return result;
+
+    }
+};
